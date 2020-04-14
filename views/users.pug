@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title Page #{name}
+        meta(charset='utf-8')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    body
+        div.container.mt-5
+            h2 Utilisateur connecté : #{nameUserConnected}
+            table.table.table-hover.table-striped.table-bordered
+                thead.thead-dark
+                    tr
+                        th(scope="col") #
+                        th(scope="col") UserName
+                        th(scope="col") Email
+                        th(scope="col") Action
+                tbody
+                    for allUser in allUsers
+                        tr
+                            th(scope="row") #{allUser._id}
+                            td #{allUser.name}
+                            td #{allUser.email}
+                            td
+                                a(href='/user/'+allUser.id)
+                                    button.btn.btn-info More
+            a(href='/signout')
+                button.btn.btn-danger Se déconnecter

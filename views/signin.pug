@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title Page #{name}
+        meta(charset='utf-8')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    body
+        div.container
+            form(method='POST' action='/signin')
+                h1 Connexion
+                div.form-group
+                    label(for='mail') Email:
+                    input#mail.form-control(type='email', placeholder='mcdo@hotmail.com' name='email')
+                div.form-group
+                    label(for='pw') Password:
+                    input#pw.form-control(type='password' name='password' placeholder='*********')
+                button.btn.btn-primary(type='submit') Sign in
+            p.mt-2 Vous n'avez pas un compte ?
+                a.ml-1(href="/") Inscrivez-vous !
